@@ -26,9 +26,9 @@ public class NavigationDrawer extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_navigation_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -54,11 +54,6 @@ public class NavigationDrawer extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         }
         else {
-            if (getFragmentManager().getBackStackEntryCount() >=0) {
-                getFragmentManager().popBackStack();
-            }
-            else {
-
             if (doubleBackToExitPressedOnce) {
                 super.onBackPressed();
                 return;
@@ -74,7 +69,7 @@ public class NavigationDrawer extends AppCompatActivity
                 }
             }, 5000);
         }
-    }}
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

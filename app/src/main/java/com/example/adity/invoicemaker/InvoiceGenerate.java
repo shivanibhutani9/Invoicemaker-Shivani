@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +20,12 @@ public class InvoiceGenerate extends AppCompatActivity {
     String description,HSNcode,unitcost,quantity,amount;
     String Name,Phone,Email,Address;
     TextView ClientDetails,addItem,bank_details;
+    ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.invoice_gen);
+        image=(ImageView)findViewById(R.id.SEAL);
         dateString=(TextView)findViewById(R.id.textdate);
          bank_details=(TextView)findViewById(R.id.bank);
         bank_details.setOnClickListener(new View.OnClickListener() {
